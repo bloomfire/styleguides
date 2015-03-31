@@ -145,6 +145,8 @@ Place mixin and `@extend` calls before your style declarations.
 }
 ```
 
+(`sans-serif` isn’t quoted here because it’s a [CSS value](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family), not a string.)
+
 
 Architecture
 ------------
