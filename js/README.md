@@ -732,7 +732,8 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
 
   ## Naming Conventions
 
-  - Avoid single letter names. Be descriptive with your naming.
+  - Avoid single letter names. Be descriptive with your naming. The only
+  exception with the interation number argument `i` in loops.
 
     ```javascript
     // bad
@@ -752,6 +753,11 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
 
     // good
     _.each(collection, function (model) {
+      // ..stuff..
+    });
+
+    // good
+    _.each(collection, function (model, i) {
       // ..stuff..
     });
     ```
