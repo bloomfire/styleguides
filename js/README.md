@@ -1,7 +1,7 @@
 # Bloomfire JS Styleguide
 
 * This is the Javascript styleguide that we use at Bloomfire engineering. It is
-based of [Airbnb's wonderful styleguide] and uses some of its examples.
+based on [Airbnb's wonderful styleguide] and uses some of its examples.
 
 ## Table of Contents
 
