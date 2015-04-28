@@ -966,7 +966,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
     ```
 
   - A lot of underscore methods accept a third context argument. Use that
-  argument instead of assigning a `self` variable.
+  argument instead of assigning and using a `self` variable.
 
     ```javascript
       
