@@ -1,7 +1,7 @@
 # Bloomfire JS Styleguide
 
 * This is the Javascript styleguide that we use at Bloomfire engineering. It is
-based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
+based of [Airbnb's wonderful styleguide] and uses some of its examples.
 
 ## Table of Contents
 
@@ -30,13 +30,13 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
 
     ```javascript
     // bad
-    var name = "Scott Mathis";
+    var name = "Bad Mc'Baderson";
 
     // good
     var name = 'Gabe Hernandez';
 
     // bad
-    var fullName = "Scott " + this.lastName;
+    var fullName = "Bad " + this.lastName;
 
     // good
     var fullName = 'Gabe ' + this.lastName;
