@@ -94,6 +94,58 @@ based of [Airbnb's wonderful styleguide] and uses some of its examples.
     }
     ```
 
+  - Keep functions short and specific. They should only do a single thing. A
+  good rule of thumb is if you find yourself writing a function or method more
+  than 8-10 lines, it can most likely be broken up into 2 or more methods.
+
+    ```javascript
+
+    // bad
+    var renderAllUsers = function (data) {
+
+      var users = _.map(data, function (user) {
+        user.fullName = user.firstName + user.lastName;
+        return user;
+      });
+
+      _.each(users, function (user) {
+        var userOptions = _.extend(user, {
+        context: this.$('body')
+        });
+        var userView = new UserView(userOptions);
+      }, this);
+    };
+
+
+    // good
+    var normalizeUsers = function (users) {
+      var normalizedUsers = _.map(data, function (user) {
+        user.fullName = user.firstName + user.lastName;
+        return user;
+      });
+      return normalizedUsers;
+    };
+
+    generateUserViewOptions = function (userData) {
+      options = _.extend(userData, {
+        context: this.$('body')
+      });
+      return options;
+    };
+
+    var renderUser = function (userData) {
+      var userOptions = generateUserViewOptions(userData);
+      var userView = new UserView(userOptions);
+    },
+
+    var renderAllUsers = function (data) {
+      var users = normalizeUsers(data);
+      _.each(users, function (user) {
+        renderUser(user);
+      });
+    };
+    ```
+
   **[⬆ back to top](#table-of-contents)**
 
 ## Properties
@@ -909,6 +961,23 @@ based of [Airbnb's wonderful styleguide] and uses some of its examples.
     var userCopy = $.extend(true, user, {
       age: 26
     });
+    ```
+
+  - A lot of underscore methods accept a third context argument. Use that
+  argument instead of assigning a `self` variable.
+
+    ```javascript
+      
+    // bad
+    var self = this;
+    _.each(comments, function (comment) {
+      self.displayComment();
+    });
+
+    // good
+    _.each(comments, function (comment) {
+      this.displayComment();
+    }, this);    
     ```
 
   **[⬆ back to top](#table-of-contents)**
