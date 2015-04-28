@@ -115,6 +115,8 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
   - Keep functions short and specific. They should only do a single thing. A
   good rule of thumb is if you find yourself writing a function or method more
   than 8-10 lines, it can most likely be broken up into 2 or more methods.
+  (Remember, the computer doesn't need code to be readable but you and other
+  developers do.)
 
     ```javascript
 
