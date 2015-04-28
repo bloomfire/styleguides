@@ -883,6 +883,7 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
       // do stuff
     });
 
+    // bad
     var object = $.extend({}, {
       library: 'jquery'
     });
