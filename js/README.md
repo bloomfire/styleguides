@@ -233,7 +233,7 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
     // bad
     var users = [];
 
-    if (type a === 'object') {
+    if (typeof users === 'object') {
       // even though 'a' is an array, in javascript arrays are really objects.
       // This code will run when you don't expect it to.
       console.log('users is an object');
@@ -243,7 +243,7 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
 
 
     // good
-    if (_.isObject(a)) {
+    if (_.isObject(users)) {
       console.log('users is an object');
     } else {
       // This is the code we expect to run and will do so correctly.
