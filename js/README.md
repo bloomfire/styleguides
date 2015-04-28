@@ -788,7 +788,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
 ## Naming Conventions
 
   - Avoid single letter names. Be descriptive with your naming. The only
-  exception is with the interation number argument `i` in loops.
+  exception is with the iteration number argument `i` in loops.
 
     ```javascript
     // bad
