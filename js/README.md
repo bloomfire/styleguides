@@ -100,7 +100,7 @@ based of [Airbnb's wonderful styleguide] and uses some of its examples.
 
     ```javascript
 
-    // bad
+    // bad. Difficult to skim and have understanding of whats happening.
     var renderAllUsers = function (data) {
 
       var users = _.map(data, function (user) {
@@ -117,7 +117,7 @@ based of [Airbnb's wonderful styleguide] and uses some of its examples.
     };
 
 
-    // good
+    // good. Easier to digest and see whats going on at a glance.
     var normalizeUsers = function (users) {
       var normalizedUsers = _.map(data, function (user) {
         user.fullName = user.firstName + user.lastName;
