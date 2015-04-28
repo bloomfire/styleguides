@@ -121,7 +121,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
     // good.
     // (Easier to digest and see whats going on at a glance.)
     var normalizeUsers = function (users) {
-      var normalizedUsers = _.map(data, function (user) {
+      var normalizedUsers = _.map(users, function (user) {
         user.fullName = user.firstName + user.lastName;
         return user;
       });
