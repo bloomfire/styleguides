@@ -929,7 +929,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
 
 ## Underscore
 
-  - when possible, always use underscore methods over jquery methods.
+  - When possible, always use underscore methods over jquery methods.
 
     ```javascript
       
