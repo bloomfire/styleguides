@@ -288,7 +288,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
     var users = [];
 
     if (typeof users === 'object') {
-      // even though 'a' is an array, in javascript arrays are really objects.
+      // even though 'users' is an array, in javascript arrays are really objects.
       // This code will run when you don't expect it to.
       console.log('users is an object');
     } else {
