@@ -101,7 +101,7 @@ based of [Airbnb's wonderful styleguide] and uses some of its examples.
     ```javascript
 
     // bad.
-    // (Difficult to skim and have understanding of whats happening.)
+    // (Difficult to skim and have an understanding of whats happening.)
     var renderAllUsers = function (data) {
 
       var users = _.map(data, function (user) {
