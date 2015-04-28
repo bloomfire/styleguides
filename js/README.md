@@ -22,6 +22,7 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
   1. [Events](#events)
   1. [Modules](#modules)
   1. [jQuery](#jquery)
+  1. [Underscore](#underscore)
   1. [Contributors](#contributors)
 
   ## Strings
@@ -868,6 +869,45 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
 
     // good
     var CheckBox = require('./CheckBox');
+    ```
+
+  **[⬆ back to top](#table-of-contents)**
+
+  ## Underscore
+
+  - when possible, always use underscore methods over jquery methods.
+
+    ```javascript
+      
+    // bad
+    $.each(elements, function (i, el) {
+      // do stuff
+    });
+
+    var object = $.extend({}, {
+      library: 'jquery'
+    });
+
+    // good
+    _.each(elements, function (el, i) {
+      // do stuff
+    });
+
+    // good
+    var object = _.extend({}, {
+      library: 'underscore'
+    })
+    ```
+
+  - The only exception to that rule is when you need to deep copy an object (
+  which underscore doesnt support)
+
+    ```javascript
+  
+    // ok
+    var userCopy = $.extend(true, user, {
+      age: 26
+    });
     ```
 
   **[⬆ back to top](#table-of-contents)**
