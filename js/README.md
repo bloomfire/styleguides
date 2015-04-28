@@ -6,6 +6,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
 ## Table of Contents
 
   1. [Strings](#strings)
+  1. [Objects](#objects)
   1. [Functions](#functions)
   1. [Properties](#properties)
   1. [Variables](#variables)
@@ -69,6 +70,23 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
     ```
 
   **[⬆ back to top](#table-of-contents)**
+
+## Objects
+
+  - Do not use wrap quotes around object key names.
+
+  ```javascript
+
+  // bad
+  var post = {
+    "title": "Dont do it this way."
+  };
+
+  // good
+  var post = {
+    title: 'Do it this way instead.'
+  }
+  ``` 
 
 ## Functions
 
