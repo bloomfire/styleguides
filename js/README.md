@@ -24,8 +24,7 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
   1. [jQuery](#jquery)
   1. [Underscore](#underscore)
   1. [Contributors](#contributors)
-
-  ## Strings
+## Strings
 
   - Use single quotes `''` for strings.
 
@@ -71,7 +70,7 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
 
   **[⬆ back to top](#table-of-contents)**
 
-  ## Functions
+## Functions
 
   - Never declare a function in a non-function block (if, while, etc). Assign
   the function to a variable instead. Browsers will allow you to do it, but they
@@ -97,7 +96,7 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
 
   **[⬆ back to top](#table-of-contents)**
 
-  ## Properties
+## Properties
 
   - Access object properties with dot notation.
 
@@ -116,7 +115,7 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
 
   **[⬆ back to top](#table-of-contents)**
 
-  ## Variables
+## Variables
 
   - Always use `var` to declare variables.
 
@@ -284,7 +283,7 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
 
   **[⬆ back to top](#table-of-contents)**
 
-  ## Blocks
+## Blocks
 
   - Use braces with all multi-line blocks. It is ok to place very simple if
   conditional and statement on the same line (usually when you want to assign or
@@ -337,7 +336,7 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
   **[⬆ back to top](#table-of-contents)**
 
 
-  ## Comments
+## Comments
 
   - Use /** ... */ for multi-line comments. Include a description, specify types
   and values for all parameters and return values.
@@ -434,7 +433,7 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
 
   **[⬆ back to top](#table-of-contents)**
 
-  ## Whitespace
+## Whitespace
 
   - Use spaces and set to 2 spaces
 
@@ -627,7 +626,7 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
 
   **[⬆ back to top](#table-of-contents)**
 
-  ## Commas
+## Commas
 
   - Do not use leading commas
 
@@ -705,7 +704,7 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
 
   **[⬆ back to top](#table-of-contents)**
 
-  ## Semicolons
+## Semicolons
 
   - **Always** use semicolons
 
@@ -731,7 +730,7 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
 
   **[⬆ back to top](#table-of-contents)**
 
-  ## Naming Conventions
+## Naming Conventions
 
   - Avoid single letter names. Be descriptive with your naming. The only
   exception with the interation number argument `i` in loops.
@@ -873,7 +872,7 @@ based of [Airbnb's wonderful styleguide] and uses some of it's examples. *
 
   **[⬆ back to top](#table-of-contents)**
 
-  ## Underscore
+## Underscore
 
   - when possible, always use underscore methods over jquery methods.
 
