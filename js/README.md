@@ -97,7 +97,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
     ```javascript
     // bad
     if (user) {
-      function logUser(name) {
+      function logUser (name) {
         console.log('Don't do this.');
       }
       logUser(user.name);
@@ -108,7 +108,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
       console.log('Do this.');
     };
     if (user) {
-      logUser(user.name)
+      logUser(user.name);
     }
     ```
 
