@@ -975,7 +975,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
     method: 'POST',
     data: postData
     success: function (res) { // ... do stuff ...},
-    error: function () {}
+    error: function () { // ... do stuff ...}
   })
 
   // good
@@ -986,7 +986,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
     success: function (res) { // ... do stuff ...},
     error: function (jqXHR, status, err) { // ... do stuff ...}
   });
-  
+
   ```
 
   **[⬆ back to top](#table-of-contents)**
