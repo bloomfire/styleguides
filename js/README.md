@@ -947,6 +947,50 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
 
   **[⬆ back to top](#table-of-contents)**
 
+## jQuery
+
+  - Most ajax calls should be abstracted out into a method but when you do need
+  to write an ajax request, be explicit and use `$.ajax` with a configuration
+  object as its argument exclusively.
+
+  ```javascript
+
+  // bad
+  $.get('some/url', function (res) {
+    // ... do stuff ...
+  });
+
+  // bad
+  $.getJSON('some/url', function (res) {
+    // ... do stuff ...
+  });
+
+  // bad
+  $.post('some/url', data, function (res) {
+    // ... do stuff ...
+  });
+
+  // bad
+  $.ajax('some/url', {
+    method: 'POST',
+    data: postData
+    success: function (res) { // ... do stuff ...},
+    error: function () {}
+  })
+
+  // good
+  $.ajax({
+    url: 'some/url',
+    method: 'POST',
+    data: postData,
+    success: function (res) { // ... do stuff ...},
+    error: function (jqXHR, status, err) { // ... do stuff ...}
+  });
+  
+  ```
+
+  **[⬆ back to top](#table-of-contents)**
+
 ## Underscore
 
   - When possible, always use underscore methods over jquery methods.
