@@ -975,7 +975,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
     method: 'POST',
     data: postData
     success: function (res) { // ... do stuff ...},
-    error: function () { // ... do stuff ...}
+    error: function (jqXHR, status, err) { // ... do stuff ...}
   })
 
   // good
