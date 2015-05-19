@@ -699,6 +699,39 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
     return obj;
     ```
 
+  - As much as possible, keep your lines of code under 80 charaters long. This
+  forces you to keep your code readable, concise, and maintainable. This may
+  seem like an unnecessary restriction, but you will start finding yourself
+  starting to write more readable code (remember, give it 5 minutes).
+
+  ```javascript
+
+  // bad.
+  // Hard to read.
+  var embedlyUrl = 'https://api.embed.ly/1/preview?wmode=opaque&key=' + ContentConfig.upload.embedlyKey + '&url=' + encodeURIComponent(embed_url);
+
+  // better
+  var embedlyUrl = 'https://api.embed.ly/1/preview?wmode=opaque&key=' +
+        ContentConfig.upload.embedlyKey + '&url=' +
+        encodeURIComponent(embed_url);
+
+  // best
+  var embedlyRoot = 'https://api.embed.ly/1/preview'
+  var queryParams = '?wmode=opaque&key=' + ContentConfig.upload.embedlyKey +
+    '&url=' + encodeURIComponent(embed_url);
+  var embedlyUrl = embedlyRoot + queryParams;
+
+  // ok
+  // This is a bit fine grained but still acceptable.
+  var embedlyRoot = 'https://api.embed.ly/1/preview';
+  var wmodeParam = '?wmode=opaque';
+  var keyParam = '&key=' + ContentConfig.upload.embedlyKey;
+  var urlParam = '&url=' + encodeURIComponent(embed_url);
+  var queryParams = wodeParam + +keyParam + urlParam;
+  var embedlyUrl = embedlyRoot + queryParams;
+  
+  ```
+
   **[⬆ back to top](#table-of-contents)**
 
 ## Commas
@@ -1047,29 +1080,6 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
     ```
 
   **[⬆ back to top](#table-of-contents)**
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
