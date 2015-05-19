@@ -701,7 +701,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
 
   - As much as possible, keep your lines of code under 80 charaters long. This
   forces you to keep your code readable, concise, and maintainable. This may
-  seem like an unnecessary restriction, but you will start finding yourself
+  seem like an unnecessary restriction, but you will finding yourself
   starting to write more readable code (remember, give it 5 minutes).
 
   ```javascript
