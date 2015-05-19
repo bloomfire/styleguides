@@ -727,7 +727,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
   var wmodeParam = '?wmode=opaque';
   var keyParam = '&key=' + ContentConfig.upload.embedlyKey;
   var urlParam = '&url=' + encodeURIComponent(embed_url);
-  var queryParams = wodeParam + keyParam + urlParam;
+  var queryParams = wmodeParam + keyParam + urlParam;
   var embedlyUrl = embedlyRoot + queryParams;
 
   ```
