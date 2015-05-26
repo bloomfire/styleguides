@@ -988,41 +988,67 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
   to write an ajax request, be explicit and use `$.ajax` with a configuration
   object as its argument exclusively.
 
-  ```javascript
+    ```javascript
 
-  // bad
-  $.get('some/url', function (res) {
-    // ... do stuff ...
-  });
+    // bad
+    $.get('some/url', function (res) {
+      // ... do stuff ...
+    });
 
-  // bad
-  $.getJSON('some/url', function (res) {
-    // ... do stuff ...
-  });
+    // bad
+    $.getJSON('some/url', function (res) {
+      // ... do stuff ...
+    });
 
-  // bad
-  $.post('some/url', data, function (res) {
-    // ... do stuff ...
-  });
+    // bad
+    $.post('some/url', data, function (res) {
+      // ... do stuff ...
+    });
 
-  // bad
-  $.ajax('some/url', {
-    method: 'POST',
-    data: postData
-    success: function (res) { // ... do stuff ...},
-    error: function (jqXHR, status, err) { // ... do stuff ...}
-  })
+    // bad
+    $.ajax('some/url', {
+      method: 'POST',
+      data: postData
+      success: function (res) { // ... do stuff ...},
+      error: function (jqXHR, status, err) { // ... do stuff ...}
+    })
 
-  // good
-  $.ajax({
-    url: 'some/url',
-    method: 'POST',
-    data: postData,
-    success: function (res) { // ... do stuff ...},
-    error: function (jqXHR, status, err) { // ... do stuff ...}
-  });
+    // good
+    $.ajax({
+      url: 'some/url',
+      method: 'POST',
+      data: postData,
+      success: function (res) { // ... do stuff ...},
+      error: function (jqXHR, status, err) { // ... do stuff ...}
+    });
 
-  ```
+    ```
+
+  - When defining success, error, and complete callbacks in your ajax
+  options, do so in that order (i.e. success first, error second, complete last).
+  This one is purely to keep a consistant styling to the code.
+
+    ```javascript
+
+    // bad
+    $.ajax({
+      url: 'some/url',
+      error: function () {},
+      success: function () {},
+      complete: function () {}
+    });
+
+    // good
+    $.ajax({
+      url: 'some/url',
+      success: function () {},
+      error: function () {},
+      complete: function () {}
+    });
+    
+    ``` 
+
+
 
   **[⬆ back to top](#table-of-contents)**
 
