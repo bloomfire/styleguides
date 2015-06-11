@@ -13,10 +13,19 @@ following the same coding style.*
 
 ## Naming
 
-  - view, template, model, and collection files should camel cased.
+  - view, template, model, and collection file names should camel cased.
 
   - view, model, and collection files should end with the applicable word `View`,
   `Model`, or `Collection`. Templates should end with file extension `.tpl`
+
+  ```
+  examples:
+
+  searchInputView.js
+  searchInputModel.js
+  searchInputCollection.js
+  searchInput.tpl
+  ```
 
   - view, model, and collection class definitions should be pascal case.
 
@@ -38,7 +47,7 @@ following the same coding style.*
   Place the relevant files in that folder.
 
   ```
-  example of file structure for a component.
+  example of file structure for a component:
 
   common
   |-comments
