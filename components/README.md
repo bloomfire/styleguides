@@ -15,7 +15,7 @@ following the same coding style.*
 
   - view, template, model, and collection file names should camel cased.
 
-  - view, model, and collection files should end with the applicable word `View`,
+  - view, model, and collection file names should end with the applicable word `View`,
   `Model`, or `Collection`. Templates should end with file extension `.tpl`
 
   ```
