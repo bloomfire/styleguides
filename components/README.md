@@ -2,7 +2,7 @@
 
 * This is the component styleguide that we use at Bloomfire engineering. It
 defines the best practices that we've come up with when developing components.
-The goal is to keep the code normalized and upheld to an agreed upon standard,
+The goal is to keep the code normalized and uphold an agreed upon coding standard,
 with the author of the component being indistinguishable because we are all
 following the same coding style.*
 
