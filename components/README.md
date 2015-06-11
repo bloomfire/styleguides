@@ -20,6 +20,14 @@ following the same coding style.*
 
   - view, model, and collection class definitions should be pascal case.
 
+  ```javascript
+  // bad
+  var tokenInput = Backbone.View.extend({});
+
+  // good
+  var TokenInput = Backbone.View.extend({});
+  ```
+
   **[⬆ back to top](#table-of-contents)**
 
 ## File Structure
@@ -31,6 +39,7 @@ following the same coding style.*
 
   ```
   example of file structure for a component.
+
   common
   |-comments
     |-collections
