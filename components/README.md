@@ -9,8 +9,20 @@ following the same coding style.*
 ## Table of Contents
 
   1. [Naming](#naming)
+  1. [File Structure](#file structure)
 
 ## Naming
+
+  - view, template, model, and collection files should camel cased.
+
+  - view, model, and collection files should end with the applicable word `View`,
+  `Model`, or `Collection`. Templates should end with file extension `.tpl`
+
+  - view, model, and collection class definitions should be pascal case.
+
+  **[⬆ back to top](#table-of-contents)**
+
+## File Structure
 
   - Components should follow a standardized naming structure. They should be
   placed in the `common` directory in a camelcased named folder. They should
@@ -31,14 +43,5 @@ following the same coding style.*
       |-commentBlockView.js
       |-newCommentFormView.js
   ```
-
-  - view, template, model, and collection files should camel cased.
-
-  - view, model, and collection files should end with the applicable word `View`,
-  `Model`, or `Collection`. Templates should end with file extension `.tpl`
-
-  - view, model, and collection class definitions should be pascal case.
-
-  **[⬆ back to top](#table-of-contents)**
 
 
