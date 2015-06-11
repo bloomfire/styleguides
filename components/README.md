@@ -10,6 +10,7 @@ following the same coding style.*
 
   1. [Naming](#naming)
   1. [File Structure](#file structure)
+  1. [Documentation](#documentation)
 
 ## Naming
 
@@ -61,5 +62,18 @@ following the same coding style.*
       |-commentBlockView.js
       |-newCommentFormView.js
   ```
+
+  **[⬆ back to top](#table-of-contents)**
+
+## Documentation
+
+  - All component files should begin with a comment that describes the file
+  at a high level. This means that you should describe what this component is,
+  what is it's purpose, what logic is contained here, and any nuances to this
+  component.
+
+  - If your component takes some instantiation options, provide documentation
+  for the attributes that inclues its type, purpose, and if it is required or
+  optional.
 
 
