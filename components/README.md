@@ -21,15 +21,15 @@ following the same coding style.*
   example of file structure for a component.
   common
   |-comments
-  | |-collections
-  | | |-commentsCollection.js
-  | |-models
-  | | |-commentModel.js
-  | | |-answerModel.js
-  | |-views
-  | | |-commentListView.js
-  | | |-commentBlockView.js
-  | | |-newCommentFormView.js
+    |-collections
+      |-commentsCollection.js
+    |-models
+      |-commentModel.js
+      |-answerModel.js
+    |-views
+      |-commentListView.js
+      |-commentBlockView.js
+      |-newCommentFormView.js
   ```
 
   - view, template, model, and collection files should camel cased.
