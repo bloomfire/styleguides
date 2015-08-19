@@ -25,7 +25,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
   1. [jQuery](#jquery)
   1. [Underscore](#underscore)
   1. [Contributors](#contributors)
-  
+
 ## Strings
 
   - Use single quotes `''` for strings.
@@ -87,7 +87,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
   var post = {
     title: 'Do it this way instead.'
   }
-  ``` 
+  ```
 
 ## Functions
 
@@ -99,7 +99,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
     // bad
     if (user) {
       function logUser (name) {
-        console.log('Don't do this.');
+        console.log('Don not do this.');
       }
       logUser(user.name);
     }
@@ -257,7 +257,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
       console.log('log');
       console.log('another log');
 
-      // ..more code 
+      // ..more code
 
       // This could be difficult to find amongst all the other code.
       var user = _.findWhere({name: 'Gabe'});
@@ -322,7 +322,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
     if (_.isObject(users)) {
       console.log('users is an object');
     } else {
-    
+
       // This is the code we expect to run and will do so correctly.
       console.log('users is an array');
     }
@@ -415,7 +415,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
 
 ## Comments
 
-  - Use /** ... */ for multi-line comments. Include a description, specify types
+  - Use `/** ... */` for multi-line comments. Include a description, specify types
   and values for all parameters and return values.
 
     ```javascript
@@ -440,6 +440,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
      * @param {String} tag
      * @return {Element} element
      */
+
     function make(tag) {
 
       // ...stuff...
@@ -531,10 +532,10 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
     }
     ```
 
-  - Place 1 space before the leading brace. Also put a space after a 
+  - Place 1 space before the leading brace. Also put a space after a
   function decleration name and the `(` opening parenthese that starts the
   arguments.
-  
+
     ```javascript
     // bad
     function test(){
@@ -734,6 +735,22 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
   var embedlyUrl = embedlyRoot + queryParams;
 
   ```
+
+  - When breaking to a new line where there are multiple conditionals, do so
+  with the ending `&&` or `||` on a previous line.
+
+  ```javascript
+
+    // bad
+    if (something && somethingElse
+        && theFinalThing)
+
+    // good
+    if (something && somethingElse &&
+        theFinalThing)
+
+  ```
+
 
   **[⬆ back to top](#table-of-contents)**
 
@@ -1046,8 +1063,8 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
       error: function () {},
       complete: function () {}
     });
-    
-    ``` 
+
+    ```
 
 
 
@@ -1058,7 +1075,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
   - When possible, always use underscore methods over jquery methods.
 
     ```javascript
-      
+
     // bad
     $.each(elements, function (i, el) {
       // do stuff
@@ -1084,7 +1101,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
   which underscore doesnt support)
 
     ```javascript
-  
+
     // ok
     var userCopy = $.extend(true, user, {
       age: 26
@@ -1095,7 +1112,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
   argument instead of assigning and using a `self` variable.
 
     ```javascript
-      
+
     // bad
     var self = this;
     _.each(comments, function (comment) {
@@ -1105,7 +1122,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
     // good
     _.each(comments, function (comment) {
       this.displayComment();
-    }, this);    
+    }, this);
     ```
 
   **[⬆ back to top](#table-of-contents)**
