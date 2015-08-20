@@ -18,7 +18,7 @@ Table of Contents
   - [Shorthand](#shorthand)
   - [Zeroes](#zeroes)
   - [Quotes](#quotes)
-* [Archtecture](#architecture)
+* [Architecture](#architecture)
   - [File Naming Conventions](#file-naming-conventions)
   - [File Size](#file-size)
 * [CSS Naming Conventions](#css-naming-conventions)
@@ -151,20 +151,28 @@ Place mixin and `@extend` calls before your style declarations.
 Architecture
 ------------
 
-For current ongoing projects, we maintain three main CSS files, all of which live in `/assets/stylesheets/v3/`. `main.scss` is our main CSS file which imports all of our modules and helpers. Due to IE’s selector limit, though, we’ve had to split `main.scss` into `main1.scss` and `main2.scss`. These files should stay in sync, with the `@import`s that aren’t used in that particular main CSS file commented out. Currently, all new CSS is being added to `main2.scss`.
+For current ongoing projects, we maintain three main CSS files, all of which live in `/assets/stylesheets/v3/`. `main.css.scss` is our main CSS file which imports all of our modules and helpers. Due to IE’s selector limit, though, we’ve had to split out `main.css.scss` into `main1.css.scss` and `main2.css.scss`. These files should stay in sync, with the `@import`s that aren’t used in that particular main CSS file commented out.
 
-*tl;dr:* When you add a new partial, add it to all three files and comment it out in `main1.scss`.
+Partials are organized into the following directories:
+
+* `helpers`: Variables, placeholders, mixins, etc.
+* `thirdparty`: CSS that comes with third-party libraries
+* `components`: Basic building blocks: buttons, tokens, form inputs, etc.
+* `modules`: Compound components: faceted search, contribution and member cards, approval messages, etc.
+* `layout`: Layout-related pieces: main page layout, primary header, sidebar, etc.
+* `pages`: Styles scoped to a specific page (some pages have more than one partial associated with them to keep things manageable)
+* `support`: One-offs and hacks, mainly to support specific browsers
 
 ###File Naming Conventions
 
-Begin a new partial name with an underscore, separating words with hyphens; and use the extension `.scss`.
+Begin a new partial name with an underscore, separating words with hyphens; and use the extension `.css.scss`. (It’s a Rails convention thing.)
 
 ```scss
 // Nope
-myAwesomeNewPartial.css.scss
+myAwesomeNewPartial.scss
 
 // Yep
-_my-awesome-new-partial.scss
+_my-awesome-new-partial.css.scss
 ```
 
 ###File Size
