@@ -601,7 +601,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
     var x = y + 5;
     ```
 
-  - End files with a single newline character.
+  - End files with a blank line.
 
     ```javascript
     // bad
@@ -615,7 +615,6 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
     (function(global) {
       // ...stuff...
     })(this);↵
-    ↵
     ```
 
     ```javascript
@@ -623,6 +622,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
     (function(global) {
       // ...stuff...
     })(this);↵
+    ↵
     ```
 
   - Use indentation when making long method chains. Use a leading dot, which
