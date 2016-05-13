@@ -28,7 +28,7 @@
 
 ## Class vs `React.createClass` vs stateless
 
-  - Prefer `class extends React.Component` over `React.createClass`. In practice, most components should extend either AppContextComponent or PureRenderComponent (Component for React-Native).
+  - Prefer `class extends React.Component` over `React.createClass`. In practice, most components should extend either `AppContextComponent` or `PureRenderComponent` (`Component` for React Native).
 
     ```jsx
     // bad
@@ -40,17 +40,18 @@
     });
 
     // good
-    class Listing extends PureRenderComponent {
+    export default class Listing extends PureRenderComponent {
       // ...
-      render() {
+      render () {
         return <div>{this.state.hello}</div>;
       }
     }
+    ```
 
 ## Naming
 
   - **Extensions**: Use `.js` extension for React components.
-  - **Filename**: Use camelCase for filenames. E.g., `reservationCard.jsx`.
+  - **Filename**: Use camelCase for filenames. E.g., `reservationCard.js`.
   - **Reference Naming**: Use PascalCase for React components and camelCase for their instances. 
 
     ```jsx
@@ -67,17 +68,16 @@
     const reservationItem = <ReservationCard />;
     ```
 
-  - **Component Naming**: Use the filename as the component name. For example, `ReservationCard.jsx` should have a reference name of `ReservationCard`. However, for root components of a directory, use `index.jsx` as the filename and use the directory name as the component name:
+  - **Component Naming**: Use the filename as the component name. For example, `cardFeed.js` should have a reference name of `CardFeed`. Namespace subcomponents with the main component name followed by a hyphen.
 
     ```jsx
     // bad
-    import Footer from './Footer/Footer';
-
-    // bad
-    import Footer from './Footer/index';
+    import ContributionCard from './card/contribution';
+    import UserCard from './card/user';
 
     // good
-    import Footer from './Footer';
+    import ContributionCard from './card/card-contribution';
+    import UserCard from './card/card-user';
     ```
 
 ## Declaration
@@ -92,7 +92,8 @@
     });
 
     // good
-    export default class ReservationCard extends React.Component {
+    export default class ReservationCard extends PureRenderComponent {
+      // stuff goes here
     }
     ```
 
@@ -109,7 +110,7 @@
 
     // good
     <Foo superLongParam="bar"
-         anotherSuperLongParam="baz" />
+      anotherSuperLongParam="baz" />
 
     // if props fit in one line then keep it on the same line
     <Foo bar="bar" />
@@ -186,8 +187,7 @@
     // good
     <Foo
       userName="hello"
-      phoneNumber={12345678}
-    />
+      phoneNumber={12345678} />
     ```
 
   - Omit the value of the prop when it is explicitly `true`. eslint: [`react/jsx-boolean-value`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md)
@@ -195,13 +195,11 @@
     ```jsx
     // bad
     <Foo
-      hidden={true}
-    />
+      hidden={true} />
 
     // good
     <Foo
-      hidden
-    />
+      hidden />
     ```
 
   - Always include an `alt` prop on `<img>` tags. If the image is presentational, `alt` can be an empty string or the `<img>` must have `role="presentation"`. eslint: [`jsx-a11y/img-has-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-has-alt.md)
@@ -259,18 +257,18 @@
 
 ## Parentheses
 
-  - Wrap JSX tags in parentheses when they span more than one line. eslint: [`react/wrap-multilines`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/wrap-multilines.md)
+  - Wrap JSX tags in parentheses. (Parentheses aren’t necessary when it’s only a single line, but wrap it anyway for the sake of consistency.)
 
     ```jsx
     // bad
-    render() {
+    render () {
       return <MyComponent className="long body" foo="bar">
                <MyChild />
              </MyComponent>;
     }
 
     // good
-    render() {
+    render () {
       return (
         <MyComponent className="long body" foo="bar">
           <MyChild />
@@ -278,10 +276,17 @@
       );
     }
 
-    // good, when single line
-    render() {
-      const body = <div>hello</div>;
-      return <MyComponent>{body}</MyComponent>;
+    // good
+    render () {
+      const body = (
+        <div>hello</div>;
+      );
+
+      return (
+        <MyComponent>
+          {body}
+        </MyComponent>
+      );
     }
     ```
 
@@ -297,19 +302,19 @@
     <Foo className="stuff" />
     ```
 
-  - If your component has multi-line properties, close its tag on a new line. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
+  - If your component has multi-line properties, close its tag on the same line.
 
     ```jsx
     // bad
     <Foo
       bar="bar"
-      baz="baz" />
+      baz="baz"
+    />
 
     // good
     <Foo
       bar="bar"
-      baz="baz"
-    />
+      baz="baz" />
     ```
 
 ## Methods
@@ -317,14 +322,13 @@
   - Use arrow functions to close over local variables.
 
     ```jsx
-    function ItemList(props) {
+    function ItemList (props) {
       return (
         <ul>
           {props.items.map((item, index) => (
             <Item
               key={item.key}
-              onClick={() => doSomethingWith(item.name, index)}
-            />
+              onClick={() => doSomethingWith(item.name, index)} />
           ))}
         </ul>
       );
@@ -339,18 +343,18 @@
     ```jsx
     // bad
     class extends React.Component {
-      onClickDiv() {
+      onClickDiv () {
         // do stuff
       }
 
-      render() {
+      render () {
         return <div onClick={this.onClickDiv.bind(this)} />
       }
     }
 
     // good
     class extends React.Component {
-      constructor(props) {
+      constructor (props) {
         super(props);
 
         this.onClickDiv = this.onClickDiv.bind(this);
@@ -360,8 +364,10 @@
         // do stuff
       }
 
-      render() {
-        return <div onClick={this.onClickDiv} />
+      render () {
+        return (
+          <div onClick={this.onClickDiv} />
+        );
       }
     }
     ```
@@ -380,7 +386,7 @@
 
     // good
     class extends React.Component {
-      onClickSubmit() {
+      onClickSubmit () {
         // do stuff
       }
 
@@ -397,8 +403,10 @@
     }
 
     // good
-    render() {
-      return (<div />);
+    render () {
+      return (
+        <div />
+      );
     }
     ```
 
@@ -408,6 +416,7 @@
 
   1. optional `static` methods
   1. `constructor`
+  1. *Getters and setters* like `get styles ()`
   1. `getChildContext`
   1. `componentWillMount`
   1. `componentDidMount`
@@ -416,10 +425,10 @@
   1. `componentWillUpdate`
   1. `componentDidUpdate`
   1. `componentWillUnmount`
-  1. *clickHandlers or eventHandlers* like `onClickSubmit()` or `onChangeDescription()`
-  1. *getter methods for `render`* like `getSelectReason()` or `getFooterContent()`
-  1. *Optional render methods* like `renderNavigation()` or `renderProfilePicture()`
   1. `render`
+  1. *clickHandlers or eventHandlers* like `onClickSubmit ()` or `onChangeDescription ()`
+  1. *getter methods for `render`* like `getSelectReason ()` or `getFooterContent ()`
+  1. *Optional render methods* like `renderNavigation ()` or `renderProfilePicture ()`
 
   - How to define `propTypes`, `defaultProps`, `contextTypes`, etc...
 
@@ -427,12 +436,12 @@
     import React, {PropTypes as PT} from 'react';
     import PureRenderComponent from 'lib/classes/pureRenderComponent';
 
-    class Link extends PureRenderComponent {
-      static methodsAreOk() {
+    export default class Link extends PureRenderComponent {
+      static methodsAreOk () {
         return true;
       }
 
-      render() {
+      render () {
         return <a href={this.props.url} data-id={this.props.id}>{this.props.text}</a>
       }
     }
@@ -446,8 +455,6 @@
     Link.defaultProps = {
       text: 'Hello World',
     };
-
-    export default Link;
     ```
 
 ## `isMounted`
