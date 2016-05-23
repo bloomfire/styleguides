@@ -26,6 +26,7 @@ based on [Airbnb's wonderful styleguide] and uses some of its examples.
   1. [Underscore](#underscore)
   1. [Contributors](#contributors)
   1. [React](./react.md)
+  1. [RxJS](./rxjs.md)
 
 ## Strings
 
